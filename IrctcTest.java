@@ -23,6 +23,10 @@ public class IrctcTest {
      String captcha = sc.nextLine();
      driver.findElement(By.className("loginCaptcha")).sendKeys(captcha);
      driver.findElement(By.id("loginbutton")).click();
+     driver.findElement(By.id("jpform:fromStation")).sendKeys("KJM");
+     driver.findElement(By.id("jpform:toStation")).sendKeys("BAM");
+     driver.findElement(By.id("jpform:journeyDateInputDate")).sendKeys("18-01-2017");
+     driver.findElement(By.id("jpform:jpsubmit")).click();
      String url = driver.getCurrentUrl();
      if(url.equals("https://www.irctc.co.in/eticketing/home")){
      System.out.println("LogIn Successfull - Passed");
@@ -31,7 +35,7 @@ public class IrctcTest {
     	 {
     		 System.out.println("LogIn Failed - Failed");
     	 }
-     }
+      }
 	}
 
 
